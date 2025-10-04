@@ -1,0 +1,83 @@
+/* assets/css/style.css - Dark workshop theme with green accents */
+:root{
+  --bg:#0b0b0b;
+  --card:#111213;
+  --text:#e6e6e6;
+  --muted:#9aa0a6;
+  --accent:#1fa84b;
+  --accent-2:#0fa63b;
+  --maxw:1100px;
+  --radius:12px;
+  --gap:18px;
+  --header-h:76px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:linear-gradient(180deg,#060606 0%, #0b0b0b 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* Layout */
+.container{max-width:var(--maxw);margin:0 auto;padding:28px;}
+.header{
+  height:var(--header-h);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:var(--gap);padding:0 10px;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.logo{
+  width:54px;height:54px;border-radius:8px;background:
+  conic-gradient(from 120deg, var(--accent), transparent 40%),
+  linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.2));
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:#051106;
+  box-shadow:0 6px 18px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+.nav a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
+
+/* Hero */
+.hero{
+  background:linear-gradient(90deg, rgba(15,166,59,0.06), rgba(0,0,0,0.0));
+  padding:36px;border-radius:14px;margin-top:10px;
+  display:flex;gap:24px;align-items:center;
+}
+.hero-left{flex:1}
+.kicker{color:var(--accent);font-weight:700;margin-bottom:6px}
+.h1{font-size:30px;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 12px}
+
+/* Cards / Services */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.02)}
+.card h3{margin:0 0 8px;color:var(--text)}
+.small{color:var(--muted);font-size:14px}
+
+/* Portfolio */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.portfolio-item{background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(255,255,255,0.01));padding:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.portfolio-thumb{height:120px;border-radius:8px;background:linear-gradient(90deg,#071007,#0b0b0b);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 340px;gap:18px}
+.form-row{display:flex;flex-direction:column;gap:8px}
+input,textarea{background:#060606;border:1px solid rgba(255,255,255,0.03);color:var(--text);padding:10px;border-radius:8px}
+button.cta{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#051106;border:none;padding:10px 14px;border-radius:8px;font-weight:700;cursor:pointer}
+
+/* Footer */
+.footer{margin-top:28px;padding:18px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);display:flex;justify-content:space-between;gap:12px;align-items:center}
+.social a{margin-right:8px;color:var(--muted);text-decoration:none;font-size:14px}
+
+/* Responsive */
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr}
+  .header{padding:12px}
+  .logo{width:46px;height:46px}
+  .h1{font-size:24px}
+}
